@@ -1,13 +1,13 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { StyleSheet, Text, View, Animated } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+import * as Animatable from 'react-native-animatable'
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import Chats from '../screens/Chats'
 import Home from '../screens/Home';
 import World from '../screens/World';
 import Ticket from '../screens/Ticket';
 import Profile from '../screens/Profile';
 import LoginScreen from '../screens/Login';
-import * as Animatable from 'react-native-animatable';
+import NavigationTopTabs from './NavigationTopTabs';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,24 +15,38 @@ const logenin = false;
 
 export default function Navigation() {
     return (
+
+        
         <Tab.Navigator initialRouteName="World" tabBarOptions={{
             style: {
                 backgroundColor: '#9547F1',
                 position: "absolute",
                 height: 60,
+                bottom: 16,
+                marginLeft: 10,
+                marginRight: 10,
+                borderRadius: 10,
+                marginTop: 20,
+                borderTopWidth: 0
+
             },
             activeTintColor: '#00FFFF',
             inactiveTintColor: '#fff',
+
             labelStyle: {
                 color: '#fff',
                 top: -8
-            }
-        }}>
-            <Tab.Screen name="Chats" component={Chats} options={{
+            },
+ 
+        }}  >
+            <Tab.Screen name="Chats" component={NavigationTopTabs} options={{
                 tabBarLabel: "Chat",
                 tabBarBadge: 3,
                 tabBarIcon: ({ color, size }) => (
-                    <Icon name='comments' color={color} size={size} />
+                    <Animatable.View animation={"flash"} duration={2000}>
+                        <Icon name='comments' color={color} size={size} />
+                    </Animatable.View>
+
                 ),
             }} />
             <Tab.Screen name="Home" component={Home} options={{
@@ -83,8 +97,8 @@ const styles = StyleSheet.create({
 function renderRoket(color, size) {
     return (
         <View>
-            <View style={{ width: 70, height: 70, backgroundColor: '#9547F1', justifyContent: 'center', top: -15, borderRadius: 40 }}   >
-                <View style={{ width: 60, height: 60, backgroundColor: '#0E1121', justifyContent: 'center', alignSelf: 'center', borderRadius: 40 }}>
+            <View style={{ width: 100, top: 1, height: 49, backgroundColor: '#fff', justifyContent: 'center', borderBottomRightRadius: 50, borderBottomLeftRadius: 50 }}   >
+                <View style={{ width: 60, height: 60, backgroundColor: '#0E1121', top: -20, justifyContent: 'center', alignSelf: 'center', borderRadius: 100 }}>
                     <Animatable.View animation="zoomIn" duration={2000}>
                         <Icon name='rocket' style={{ alignSelf: 'center', fontSize: size, color: color }} />
                     </Animatable.View>
