@@ -6,6 +6,9 @@ export default function Ticket() {
   return (
     <SafeAreaView style={prueba.droidSafeArea}>
       <View style={styles.container}>
+      <View>
+        
+      </View>
         <Text>Ticket</Text>
       </View>
     </SafeAreaView>

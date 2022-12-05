@@ -47,7 +47,7 @@ export default function HomeChat() {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#000000',
+        backgroundColor: '#181828',
     },
     conversation: {
         justifyContent: 'center',

@@ -23,9 +23,6 @@ export default function Chats() {
           </TouchableHighlight>
         </View>
       </View>
-      <HomeChat />
-      <HomeChat />
-      <HomeChat />
     </View>
   )
 }
@@ -34,10 +31,10 @@ export default function Chats() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#000000',
+    backgroundColor: '#181828',
   },
   banner: {
-    backgroundColor: '#000000',
+    backgroundColor: '#181828',
     height: 70,
     justifyContent: 'center',
     flexDirection: 'row',

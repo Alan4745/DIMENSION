@@ -1,6 +1,6 @@
-import { View, Text, StyleSheet , Image , TextInput } from 'react-native'
+import { View, Text, StyleSheet, Image, TextInput } from 'react-native'
 import { SafeAreaView } from "react-native-safe-area-context";
-import React , {useState}from 'react'
+import React, { useState } from 'react'
 import * as Animatable from 'react-native-animatable'
 
 export default function Home() {

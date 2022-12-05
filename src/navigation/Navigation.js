@@ -7,7 +7,7 @@ import World from '../screens/World';
 import Ticket from '../screens/Ticket';
 import Profile from '../screens/Profile';
 import LoginScreen from '../screens/Login';
-import NavigationTopTabs from './NavigationTopTabs';
+import { NavigationTopTabs, NavigationTopTabsWorld } from './NavigationTopTabs';
 
 const Tab = createBottomTabNavigator();
 
@@ -16,10 +16,10 @@ const logenin = false;
 export default function Navigation() {
     return (
 
-        
+
         <Tab.Navigator initialRouteName="World" tabBarOptions={{
             style: {
-                backgroundColor: '#9547F1',
+                backgroundColor: '#7000FF',
                 position: "absolute",
                 height: 60,
                 bottom: 16,
@@ -27,7 +27,15 @@ export default function Navigation() {
                 marginRight: 10,
                 borderRadius: 10,
                 marginTop: 20,
-                borderTopWidth: 0
+                borderTopWidth: 0,
+                shadowColor: '#7000FF',
+                shadowRadius: 10,
+                shadowOpacity: 8,
+                elevation: 8,
+                shadowOffset: {
+                    width: 0,
+                    height: 4,
+                }
 
             },
             activeTintColor: '#00FFFF',
@@ -37,7 +45,6 @@ export default function Navigation() {
                 color: '#fff',
                 top: -8
             },
- 
         }}  >
             <Tab.Screen name="Chats" component={NavigationTopTabs} options={{
                 tabBarLabel: "Chat",
@@ -55,7 +62,7 @@ export default function Navigation() {
                     <Icon name='home' color={color} size={size} />
                 ),
             }} />
-            <Tab.Screen name="World" component={World}
+            <Tab.Screen name="World" component={NavigationTopTabsWorld}
                 options={{
                     tabBarLabel: '',
                     tabBarIcon: ({ color, size }) => renderRoket(color, size),
